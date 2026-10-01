@@ -1,0 +1,7 @@
+# Local tooling / QA output
+node_modules/
+qa/out/
+.playwright-mcp/
+**/.claude/settings.local.json
+.DS_Store
+Thumbs.db
