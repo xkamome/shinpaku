@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>心白 SHINPAKU — 日本酒，由表及裡</title>
+<meta name="description" content="一粒酒米往內研磨的旅程。從入門、進階到深層，用互動圖表、老杜氏的原話與最新研究，重新認識日本酒。">
+<meta name="theme-color" content="#08090b">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://xkamome.github.io/shinpaku/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="心白 SHINPAKU — 日本酒，由表及裡">
+<meta property="og:description" content="一粒酒米往內研磨的旅程。從入門、進階到深層，重新認識日本酒。">
+<meta property="og:url" content="https://xkamome.github.io/shinpaku/">
+<meta property="og:image" content="https://xkamome.github.io/shinpaku/assets/og.png">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="bg-fallback" aria-hidden="true"></div>
+<div class="film" aria-hidden="true"></div>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader-k" lang="ja">心白</div>
+  <div class="loader-n mono"><span class="loader-v">100</span>%</div>
+</div>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="心白 SHINPAKU，回到頂端">
+    <span class="brand-k" lang="ja">心白</span>
+    <span class="brand-r mono">SHINPAKU</span>
+  </a>
+  <nav class="gauge" aria-label="章節導覽">
+    <div class="gauge-readout" aria-hidden="true">
+      <span class="gauge-label" lang="ja">精米歩合</span>
+      <span class="gauge-num"><span class="gauge-val">100</span><i>%</i></span>
+    </div>
+    <div class="gauge-rail" aria-hidden="true"><i class="gauge-fill"></i><i class="gauge-dot"></i></div>
+    <ol class="gauge-list">
+      <li><a href="#surface" data-layer="surface"><b lang="ja">表層</b><span>入門</span></a></li>
+      <li><a href="#middle" data-layer="middle"><b lang="ja">中層</b><span>進階</span></a></li>
+      <li><a href="#deep" data-layer="deep"><b lang="ja">深層</b><span>深入</span></a></li>
+      <li><a href="#core" data-layer="core"><b lang="ja">心白</b><span>核心</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ═════════════════════════ HERO ═════════════════════════ -->
+<section class="hero" id="top" data-p="100">
+  <div class="hero-meta mono">
+    <span>日本酒 — 由淺入深的一次下潛</span>
+    <span class="hero-meta-r">精米歩合 100% → 35%</span>
+  </div>
+  <h1 class="hero-title">
+    <span class="hero-k" lang="ja" data-split>心白</span>
+    <span class="hero-zh">日本酒，由表及裡</span>
+  </h1>
+  <div class="hero-body">
+    <p class="hero-lead">酒米的中心，有一塊不透明的白色核心，叫做<ruby lang="ja">心白<rt>しんぱく</rt></ruby>。釀酒的人把米一層層磨掉，為的是更接近它。</p>
+    <p class="hero-lead hero-lead-2">這一頁也是這樣。每往下捲一層，就多磨掉一點表面的常識。</p>
+  </div>
+  <div class="stage stage-hero" data-stage aria-hidden="true"></div>
+  <a class="hero-cue" href="#surface"><span class="mono">往下研磨</span><i aria-hidden="true"></i></a>
+</section>
+
+<!-- ═════════════════════════ LAYER 1 · SURFACE ═════════════════════════ -->
+<section class="layer layer-surface" id="surface" aria-labelledby="surface-title">
+
+  <header class="gate gate-left" data-p="100">
+    <div class="stage stage-gate" data-stage aria-hidden="true"></div>
+    <p class="gate-num mono"><span>LAYER 01</span><span>精米歩合 100 → 70%</span></p>
+    <h2 class="gate-title" id="surface-title"><span class="gate-ja" lang="ja" data-split>表層</span><span class="gate-zh">入門：先知道它是什麼</span></h2>
+    <p class="gate-lead">不必先背任何名詞。這一層只回答三件事：它用什麼做、米怎麼變成酒，還有第一杯該怎麼挑。</p>
+  </header>
+
+  <!-- 1-1 四原料 -->
+  <article class="block block-elements">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">01 — 原料</p>
+      <h3 class="h3">四樣東西，就這樣</h3>
+      <p class="lede">一瓶純米酒的原料欄，通常只寫兩樣：米、米麴。再加上水，以及肉眼看不見的酵母，日本酒就是這四者合作的結果。</p>
+    </div>
+    <ul class="elements" role="list">
+      <li class="el reveal">
+        <span class="el-k" lang="ja">米</span>
+        <span class="el-r mono" lang="ja">kome</span>
+        <p>食用米也能釀，但釀酒專用的「酒造好適米」顆粒大，中心多半有心白，麴菌比較容易往米心長。</p>
+      </li>
+      <li class="el reveal">
+        <span class="el-k" lang="ja">麴</span>
+        <span class="el-r mono" lang="ja">kōji</span>
+        <p>長在蒸米上的麴菌（<i lang="la">Aspergillus oryzae</i>）。它分泌酵素，把澱粉切成糖。2006 年，日本釀造學會把它定為「國菌」。</p>
+      </li>
+      <li class="el reveal">
+        <span class="el-k" lang="ja">水</span>
+        <span class="el-r mono" lang="ja">mizu</span>
+        <p>成品裡大約八成是水。釀造用水要盡量不含鐵和錳，因為它們會讓酒變色、走味。</p>
+      </li>
+      <li class="el reveal">
+        <span class="el-k" lang="ja">酵</span>
+        <span class="el-r mono" lang="ja">kōbo</span>
+        <p>酵母負責把糖變成酒精和香氣。換一種酵母，香氣就可能從蘋果變成香蕉。</p>
+      </li>
+    </ul>
+  </article>
+
+  <!-- 1-2 並行複發酵 -->
+  <article class="block block-ferment">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">02 — 發酵</p>
+      <h3 class="h3">米沒有糖，所以要<br>同時做兩件事</h3>
+      <p class="lede">葡萄本身就有糖，酵母直接吃，就成了葡萄酒。米只有澱粉，得先變成糖。啤酒是先糖化、再發酵，一步接一步。日本酒則讓麴的糖化和酵母的發酵在<strong>同一個槽裡同時進行</strong>，這叫<ruby lang="ja">並行複発酵<rt>へいこうふくはっこう</rt></ruby>。</p>
+    </div>
+    <div class="ferment" role="list">
+      <figure class="fm reveal" role="listitem">
+        <svg viewBox="0 0 240 120" class="fm-svg" aria-hidden="true">
+          <circle cx="40" cy="60" r="16" class="fm-node fm-sugar"/><text x="40" y="65" class="fm-t">糖</text>
+          <path d="M60 60 H180" class="fm-path"/><circle r="3.5" class="fm-dot"><animateMotion dur="2.4s" repeatCount="indefinite" path="M60 60 H180"/></circle>
+          <circle cx="200" cy="60" r="16" class="fm-node fm-alc"/><text x="200" y="65" class="fm-t">酒</text>
+        </svg>
+        <figcaption><b>葡萄酒</b><span>單發酵</span><small>糖 → 酒精</small></figcaption>
+      </figure>
+      <figure class="fm reveal" role="listitem">
+        <svg viewBox="0 0 240 120" class="fm-svg" aria-hidden="true">
+          <circle cx="24" cy="60" r="14" class="fm-node"/><text x="24" y="65" class="fm-t">澱</text>
+          <path d="M42 60 H102" class="fm-path"/><circle r="3" class="fm-dot"><animateMotion dur="2.4s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.5;1" calcMode="linear" path="M42 60 H102"/></circle>
+          <circle cx="120" cy="60" r="14" class="fm-node fm-sugar"/><text x="120" y="65" class="fm-t">糖</text>
+          <path d="M138 60 H198" class="fm-path"/><circle r="3" class="fm-dot"><animateMotion dur="2.4s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;0.5;1" calcMode="linear" path="M138 60 H198"/></circle>
+          <circle cx="216" cy="60" r="14" class="fm-node fm-alc"/><text x="216" y="65" class="fm-t">酒</text>
+        </svg>
+        <figcaption><b>啤酒</b><span>單行複發酵</span><small>先糖化，再發酵</small></figcaption>
+      </figure>
+      <figure class="fm fm-sake reveal" role="listitem">
+        <svg viewBox="0 0 240 120" class="fm-svg" aria-hidden="true">
+          <rect x="14" y="14" width="212" height="92" rx="46" class="fm-tank"/>
+          <circle cx="50" cy="60" r="14" class="fm-node"/><text x="50" y="65" class="fm-t">澱</text>
+          <path d="M68 60 H102" class="fm-path"/><circle r="3" class="fm-dot"><animateMotion dur="1.2s" repeatCount="indefinite" path="M68 60 H102"/></circle>
+          <circle cx="120" cy="60" r="14" class="fm-node fm-sugar"/><text x="120" y="65" class="fm-t">糖</text>
+          <path d="M138 60 H172" class="fm-path"/><circle r="3" class="fm-dot"><animateMotion dur="1.2s" repeatCount="indefinite" begin="0.3s" path="M138 60 H172"/></circle>
+          <circle cx="190" cy="60" r="14" class="fm-node fm-alc"/><text x="190" y="65" class="fm-t">酒</text>
+        </svg>
+        <figcaption><b>日本酒</b><span lang="ja">並行複発酵</span><small>糖化和發酵在同一個槽裡同時進行</small></figcaption>
+      </figure>
+    </div>
+    <p class="note">糖一邊生成、一邊被酵母吃掉，酵母不會被過多的糖悶住。所以未加水的原酒，酒精度能自然達到 17–20% 左右，是釀造酒裡最高的一群。</p>
+  </article>
+
+  <!-- 1-3 四型 -->
+  <article class="block block-types" data-p="70">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">03 — 第一杯</p>
+      <h3 class="h3">先別管名字，<br>用香氣和味道挑</h3>
+      <p class="lede">日本酒服務研究會・酒匠研究會聯合會（SSI）把日本酒依兩條軸線分成四型：縱軸是香氣高低，橫軸是味道濃淡。點選或聚焦一個象限看看。</p>
+    </div>
+    <div class="types">
+      <div class="types-map" role="group" aria-label="日本酒四型分類">
+        <span class="axis axis-x mono" aria-hidden="true"><i>味 淡</i><i>濃</i></span>
+        <span class="axis axis-y mono" aria-hidden="true"><i>香 高</i><i>低</i></span>
+        <button class="type" data-type="kun" aria-pressed="true"><b lang="ja">薫酒</b><span lang="ja">くんしゅ</span></button>
+        <button class="type" data-type="juku" aria-pressed="false"><b lang="ja">熟酒</b><span lang="ja">じゅくしゅ</span></button>
+        <button class="type" data-type="sou" aria-pressed="false"><b lang="ja">爽酒</b><span lang="ja">そうしゅ</span></button>
+        <button class="type" data-type="jun" aria-pressed="false"><b lang="ja">醇酒</b><span lang="ja">じゅんしゅ</span></button>
+      </div>
+      <div class="types-panel" aria-live="polite">
+        <p class="tp-kicker mono"></p>
+        <h4 class="tp-name"></h4>
+        <p class="tp-desc"></p>
+        <dl class="tp-meta">
+          <div><dt>常見類型</dt><dd class="tp-ex"></dd></div>
+          <div><dt>建議溫度</dt><dd class="tp-temp"></dd></div>
+          <div><dt>搭配</dt><dd class="tp-food"></dd></div>
+        </dl>
+      </div>
+    </div>
+    <blockquote class="voice voice-tradition reveal">
+      <p class="voice-tag mono">老杜氏的觀點 ── 傳統</p>
+      <p class="voice-ja" lang="ja">香りを抑えたほうが料理とも喧嘩をしないので飲み飽きない。</p>
+      <p class="voice-zh">香氣收斂一點，才不會跟料理吵架，喝不膩。</p>
+      <footer class="voice-src">菅原敬夫｜南部杜氏，1935 年生。談吟釀剛流行時「吟釀就是聞香的酒」的風氣。</footer>
+    </blockquote>
+  </article>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" lang="ja"><span>精米　洗米　浸漬　蒸米　製麹　酒母　三段仕込み　上槽　火入れ　貯蔵　</span><span>精米　洗米　浸漬　蒸米　製麹　酒母　三段仕込み　上槽　火入れ　貯蔵　</span></div></div>
+
+<!-- ═════════════════════════ LAYER 2 · MIDDLE ═════════════════════════ -->
+<section class="layer layer-middle" id="middle" aria-labelledby="middle-title">
+
+  <header class="gate gate-right" data-p="70">
+    <div class="stage stage-gate" data-stage aria-hidden="true"></div>
+    <p class="gate-num mono"><span>LAYER 02</span><span>精米歩合 70 → 50%</span></p>
+    <h2 class="gate-title" id="middle-title"><span class="gate-ja" lang="ja" data-split>中層</span><span class="gate-zh">進階：讀懂酒標</span></h2>
+    <p class="gate-lead">酒標上的名字，其實都在回答兩個問題：米磨掉了多少？有沒有加釀造酒精？</p>
+  </header>
+
+  <!-- 2-1 特定名稱 -->
+  <article class="block block-grades" id="grades" data-grades>
+    <div class="grades-top">
+      <div class="block-head">
+        <p class="eyebrow mono">04 — 特定名稱酒</p>
+        <h3 class="h3">酒標上的八個名字</h3>
+        <p class="lede">日本國稅廳的《清酒製法品質表示基準》只規定了八種「特定名稱」。<ruby lang="ja">精米歩合<rt>せいまいぶあい</rt></ruby> 60%，意思是磨掉外側 40%、留下 60%。拖動滑桿看看哪些名字能用；右邊那粒米會跟著你磨。</p>
+      </div>
+      <div class="grades-ctl">
+        <label class="ctl-label" for="polish">精米步合</label>
+        <output class="ctl-out" for="polish" id="polish-out"><span>60</span><i>%</i></output>
+        <input type="range" id="polish" min="35" max="100" step="1" value="60" class="range" aria-describedby="polish-hint">
+        <p class="ctl-hint mono" id="polish-hint"><span>留 35%</span><span>不磨 100%</span></p>
+        <div class="switch-row">
+          <button class="switch" id="alc" role="switch" aria-checked="false"><i aria-hidden="true"></i><span>添加釀造酒精</span></button>
+        </div>
+      </div>
+      <div class="stage stage-grades" data-stage data-stage-kind="grades" aria-hidden="true"></div>
+    </div>
+    <div class="grades" role="list">
+      <div class="grades-row" role="presentation">
+        <p class="grades-rowlabel mono">純米系 — 只用米、米麴、水</p>
+        <div class="grade" data-rank="1" role="listitem" data-alc="0" data-max="100"><b lang="ja">純米酒</b><span class="grade-req">無精米步合規定</span></div>
+        <div class="grade" data-rank="2" role="listitem" data-alc="0" data-max="60" data-special="1"><b lang="ja">特別純米酒</b><span class="grade-req">≤ 60% 或特別製法</span></div>
+        <div class="grade" data-rank="3" role="listitem" data-alc="0" data-max="60" data-gin="1"><b lang="ja">純米吟醸酒</b><span class="grade-req">≤ 60%・吟釀造</span></div>
+        <div class="grade" data-rank="4" role="listitem" data-alc="0" data-max="50" data-gin="1"><b lang="ja">純米大吟醸酒</b><span class="grade-req">≤ 50%・吟釀造</span></div>
+      </div>
+      <div class="grades-row" role="presentation">
+        <p class="grades-rowlabel mono">加釀造酒精 — 不超過白米重量 10%</p>
+        <div class="grade" data-rank="1" role="listitem" data-alc="1" data-max="70"><b lang="ja">本醸造酒</b><span class="grade-req">≤ 70%</span></div>
+        <div class="grade" data-rank="2" role="listitem" data-alc="1" data-max="60" data-special="1"><b lang="ja">特別本醸造酒</b><span class="grade-req">≤ 60% 或特別製法</span></div>
+        <div class="grade" data-rank="3" role="listitem" data-alc="1" data-max="60" data-gin="1"><b lang="ja">吟醸酒</b><span class="grade-req">≤ 60%・吟釀造</span></div>
+        <div class="grade" data-rank="4" role="listitem" data-alc="1" data-max="50" data-gin="1"><b lang="ja">大吟醸酒</b><span class="grade-req">≤ 50%・吟釀造</span></div>
+      </div>
+    </div>
+    <p class="grades-result" aria-live="polite"></p>
+    <div class="grades-notes">
+      <p class="note">所有特定名稱酒的麴米比例都必須達 15% 以上。「吟釀造」指低溫、長時間發酵等引出吟釀香的釀法。不符合以上任何一類的，就是<b lang="ja">普通酒</b>。</p>
+      <aside class="myth reveal">
+        <p class="myth-q"><span class="mono">常見誤解</span>加了酒精，就是次等酒？</p>
+        <p>不一定。少量的釀造酒精能把香氣成分從酒醪裡帶出來，也讓口感更俐落。全國新酒鑑評會上的大吟釀，長年都以添加酒精的為主流。</p>
+      </aside>
+    </div>
+  </article>
+
+  <!-- 2-2 工序 -->
+  <article class="block block-process" id="process">
+    <div class="process-pin">
+      <div class="stage stage-head" data-stage aria-hidden="true"></div>
+      <div class="block-head process-head">
+        <p class="eyebrow mono">05 — 工序</p>
+        <h3 class="h3">從米到酒，九道工序</h3>
+        <p class="lede">釀酒圈有句老話：<span lang="ja">「一麹、二酛、三造り」</span>，意思是麴第一、酒母第二、醪的管理第三。</p>
+      </div>
+      <ol class="process" role="list">
+        <li class="step">
+          <span class="step-n mono">01</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="32" rx="16" ry="24"/><ellipse cx="32" cy="32" rx="10" ry="15"/><ellipse cx="32" cy="32" rx="5" ry="7" class="fill"/></svg>
+          <h4><span lang="ja">精米</span><small lang="ja">せいまい</small></h4>
+          <p>磨掉米粒外層的蛋白質和脂質。它們是雜味的主要來源。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">02</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 26 q8 -8 16 0 t16 0 t16 0"/><path d="M8 38 q8 -8 16 0 t16 0 t16 0"/><path d="M8 50 q8 -8 16 0 t16 0 t16 0"/></svg>
+          <h4><span lang="ja">洗米・浸漬</span><small lang="ja">せんまい・しんせき</small></h4>
+          <p>洗去米糠，再讓米吸水。吟釀用的米會拿碼錶以秒為單位控制吸水量。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">03</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 52 V12"/><path d="M32 52 V8" /><path d="M46 52 V12"/><path d="M10 52 H54"/></svg>
+          <h4><span lang="ja">蒸米</span><small lang="ja">じょうまい</small></h4>
+          <p>用蒸的，不用煮的。目標是<span lang="ja">「外硬内軟」</span>：外面乾爽有彈性，裡面軟。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">04</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="20" cy="22" r="3" class="fill"/><circle cx="36" cy="16" r="2" class="fill"/><circle cx="46" cy="30" r="3" class="fill"/><circle cx="26" cy="38" r="2" class="fill"/><circle cx="40" cy="46" r="3" class="fill"/><circle cx="16" cy="50" r="2" class="fill"/><rect x="6" y="6" width="52" height="52" rx="4"/></svg>
+          <h4><span lang="ja">製麹</span><small lang="ja">せいきく</small></h4>
+          <p>在又暖又濕的麴室裡撒上種麴，花大約兩天讓麴菌在蒸米上長滿。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">05</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 14 V50 a6 6 0 0 0 6 6 H44 a6 6 0 0 0 6 -6 V14"/><circle cx="26" cy="40" r="3"/><circle cx="36" cy="32" r="4"/><circle cx="30" cy="22" r="2"/></svg>
+          <h4><span lang="ja">酒母</span><small lang="ja">しゅぼ</small></h4>
+          <p>又叫「酛」，用來先培養出大量健康的酵母。生酛、山廢靠自然的乳酸菌，大約要四週；速釀直接加入乳酸，大約兩週。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">06</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 54 H24 V42 H40 V28 H56"/><path d="M8 54 H56"/></svg>
+          <h4><span lang="ja">醪・三段仕込み</span><small lang="ja">もろみ</small></h4>
+          <p>米、麴、水分三次加進酒母裡（初添、仲添、留添），讓酵母不被稀釋。發酵大約持續三到五週。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">07</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 14 H54"/><path d="M14 22 H50"/><path d="M18 30 H46"/><path d="M32 36 V54"/><path d="M26 48 L32 54 L38 48"/></svg>
+          <h4><span lang="ja">上槽</span><small lang="ja">じょうそう</small></h4>
+          <p>把醪搾成酒和酒粕。先流出的叫<span lang="ja">「あらばしり」</span>，中段叫<span lang="ja">「中取り」</span>，最後加壓搾出的叫<span lang="ja">「責め」</span>。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">08</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 C44 22 46 30 46 38 a14 14 0 0 1 -28 0 C18 30 20 22 32 8 Z"/><path d="M32 30 C37 36 38 40 38 43 a6 6 0 0 1 -12 0 C26 40 27 36 32 30 Z" class="fill"/></svg>
+          <h4><span lang="ja">火入れ</span><small lang="ja">ひいれ</small></h4>
+          <p>加熱到約 60–65℃，殺菌並讓酵素停止作用。一般在貯藏前、出貨前各做一次。</p>
+        </li>
+        <li class="step">
+          <span class="step-n mono">09</span>
+          <svg class="step-ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="16" y="10" width="32" height="46" rx="6"/><path d="M16 24 H48"/><path d="M16 42 H48"/></svg>
+          <h4><span lang="ja">貯蔵・割水</span><small lang="ja">ちょぞう・わりみず</small></h4>
+          <p>熟成後加水調整酒精度，再裝瓶出貨。不加水的就是「原酒」。</p>
+        </li>
+      </ol>
+    </div>
+    <blockquote class="voice voice-tradition voice-inline reveal">
+      <p class="voice-tag mono">老杜氏的觀點 ── 傳統</p>
+      <p class="voice-ja" lang="ja">わしの場合はその前に『一にも二にも三にも蒸し』ですわ。</p>
+      <p class="voice-zh">在我看來，在麴之前要先講：「一是蒸，二是蒸，三還是蒸。」</p>
+      <footer class="voice-src">池田健司｜廣島杜氏，1942 年生。他認為蒸米沒做好，麴再怎麼用心也做不好。</footer>
+    </blockquote>
+  </article>
+
+  <!-- 2-3 酒標 -->
+  <article class="block block-label" id="label" data-p="50">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">06 — 讀一張酒標</p>
+      <h3 class="h3">把一張酒標拆開來看</h3>
+      <p class="lede">這是一張虛構的酒標。點選上面的每一行，看它在說什麼。</p>
+    </div>
+    <div class="label-wrap">
+      <figure class="sakelabel" aria-label="虛構酒標範例">
+        <div class="sl-paper">
+          <div class="sl-front">
+            <button class="sl-hot sl-name" data-term="name" lang="ja">心白</button>
+            <button class="sl-hot sl-grade" data-term="grade" lang="ja">純米吟醸</button>
+            <button class="sl-hot sl-nama" data-term="nama" lang="ja">生詰・原酒</button>
+            <span class="sl-seal" aria-hidden="true" lang="ja">心</span>
+          </div>
+          <div class="sl-specs" lang="ja">
+            <button class="sl-hot sl-row" data-term="rice"><span>使用米</span><span>山田錦 100％</span></button>
+            <button class="sl-hot sl-row" data-term="polish"><span>精米歩合</span><span>55％</span></button>
+            <button class="sl-hot sl-row" data-term="abv"><span>アルコール分</span><span>16度</span></button>
+            <button class="sl-hot sl-row" data-term="smv"><span>日本酒度</span><span>＋3</span></button>
+            <button class="sl-hot sl-row" data-term="acid"><span>酸度</span><span>1.5</span></button>
+            <button class="sl-hot sl-row" data-term="amino"><span>アミノ酸度</span><span>1.2</span></button>
+            <button class="sl-hot sl-row" data-term="date"><span>製造年月</span><span>2026.09</span></button>
+          </div>
+        </div>
+      </figure>
+      <div class="label-panel" aria-live="polite">
+        <p class="lp-kicker mono">點選酒標上的文字</p>
+        <h4 class="lp-term"></h4>
+        <p class="lp-desc"></p>
+      </div>
+    </div>
+
+    <div class="hiire">
+      <h4 class="h4">「生」字頭的三種酒：差在火入れ的時機</h4>
+      <table class="hiire-table">
+        <caption class="sr-only">火入れ時機對照表：○ 表示有加熱殺菌，× 表示沒有</caption>
+        <thead><tr><th scope="col">種類</th><th scope="col">貯藏前</th><th scope="col">出貨前</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span lang="ja">一般的な酒</span><small>一般</small></th><td><i class="on" aria-label="有">○</i></td><td><i class="on" aria-label="有">○</i></td></tr>
+          <tr><th scope="row"><span lang="ja">生詰酒</span><small>なまづめ</small></th><td><i class="on" aria-label="有">○</i></td><td><i class="off" aria-label="沒有">×</i></td></tr>
+          <tr><th scope="row"><span lang="ja">生貯蔵酒</span><small>なまちょぞう</small></th><td><i class="off" aria-label="沒有">×</i></td><td><i class="on" aria-label="有">○</i></td></tr>
+          <tr><th scope="row"><span lang="ja">生酒</span><small>なまざけ</small></th><td><i class="off" aria-label="沒有">×</i></td><td><i class="off" aria-label="沒有">×</i></td></tr>
+        </tbody>
+      </table>
+      <p class="note">秋天上市的<span lang="ja">「ひやおろし」</span>，就是冬天釀、春天火入れ一次、熬過夏天，出貨時不再加熱的生詰酒。</p>
+    </div>
+
+    <ul class="terms" role="list">
+      <li><b lang="ja">無濾過</b><span>沒經過活性炭過濾，顏色和味道都保留得比較多。</span></li>
+      <li><b lang="ja">にごり酒</b><span>用較粗的網搾，留下部分酒醪，所以呈白濁。</span></li>
+      <li><b lang="ja">生酛・山廃</b><span>不添加乳酸、靠自然乳酸菌培養的傳統酒母。山廢省略了「山卸」這道磨碎米的工夫。</span></li>
+      <li><b lang="ja">貴醸酒</b><span>三段仕込的最後一次，用酒代替水投入，所以甘醇濃厚。</span></li>
+      <li><b lang="ja">袋吊り・斗瓶取り</b><span>把醪裝進布袋吊起來，只收自然滴下的酒，常用在比賽用酒。</span></li>
+      <li><b lang="ja">古酒・熟成酒</b><span>長期熟成的酒，顏色轉成琥珀，帶焦糖和乾果的香氣。</span></li>
+    </ul>
+  </article>
+</section>
+
+<div class="marquee marquee-rev" aria-hidden="true"><div class="marquee-track" lang="ja"><span>日本酒度　酸度　アミノ酸度　山田錦　雄町　宮水　男水　女水　燗　</span><span>日本酒度　酸度　アミノ酸度　山田錦　雄町　宮水　男水　女水　燗　</span></div></div>
+
+<!-- ═════════════════════════ LAYER 3 · DEEP ═════════════════════════ -->
+<section class="layer layer-deep" id="deep" aria-labelledby="deep-title">
+
+  <header class="gate gate-left" data-p="50">
+    <div class="stage stage-gate" data-stage aria-hidden="true"></div>
+    <p class="gate-num mono"><span>LAYER 03</span><span>精米歩合 50 → 35%</span></p>
+    <h2 class="gate-title" id="deep-title"><span class="gate-ja" lang="ja" data-split>深層</span><span class="gate-zh">深入：數字之外</span></h2>
+    <p class="gate-lead">數字從這裡開始出現，也從這裡開始騙人。這一層把數值、原料和溫度拆開來看，並讓三種聲音並列：<span class="v-tr">傳統</span>的經驗、<span class="v-re">研究</span>的數據、<span class="v-mk">市場</span>的實驗。</p>
+  </header>
+
+  <!-- 3-1 數值 -->
+  <article class="block block-meter" id="meter">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">07 — 數值讀法</p>
+      <h3 class="h3">甘或辛，<br>不是一個數字決定的</h3>
+      <p class="lede"><b lang="ja">日本酒度</b>用比重計量：糖越多、酒越重，數字就越往負的走，偏甘。但喝起來甜不甜，還要看<b lang="ja">酸度</b>。同樣的日本酒度，酸度高就顯得辛口、濃厚。1974 年，佐藤信等人把這兩個數字合成「甘辛度」和「濃淡度」兩條公式。拖動圓點，或是用下面的滑桿。</p>
+    </div>
+    <div class="meter">
+      <div class="meter-chart">
+        <svg viewBox="0 0 600 440" class="meter-svg" role="img" aria-labelledby="meter-svg-t">
+          <title id="meter-svg-t">日本酒度與酸度的分布圖，兩條曲線把平面分成甘辛、濃淡四區</title>
+          <g class="m-grid"></g>
+          <g class="m-regions"></g>
+          <path class="m-line m-line-ak" d=""/>
+          <path class="m-line m-line-nt" d=""/>
+          <g class="m-labels"></g>
+          <g class="m-axes"></g>
+          <g class="m-point" tabindex="-1"><circle r="22" class="m-halo"/><circle r="7" class="m-dot"/></g>
+        </svg>
+      </div>
+      <div class="meter-ctl">
+        <div class="ctl">
+          <label class="ctl-label" for="smv">日本酒度</label>
+          <output class="ctl-out" id="smv-out" for="smv">+3</output>
+          <input type="range" id="smv" class="range" min="-15" max="15" step="0.5" value="3">
+          <p class="ctl-hint mono"><span>−15 甘</span><span>辛 +15</span></p>
+        </div>
+        <div class="ctl">
+          <label class="ctl-label" for="acid">酸度</label>
+          <output class="ctl-out" id="acid-out" for="acid">1.4</output>
+          <input type="range" id="acid" class="range" min="0.8" max="2.4" step="0.05" value="1.4">
+          <p class="ctl-hint mono"><span>0.8</span><span>2.4</span></p>
+        </div>
+        <div class="meter-read" aria-live="polite">
+          <div><span class="mono">甘辛度</span><b class="mr-ak">−0.2</b><em class="mr-ak-t">略辛</em></div>
+          <div><span class="mono">濃淡度</span><b class="mr-nt">−0.6</b><em class="mr-nt-t">偏淡麗</em></div>
+        </div>
+        <div class="presets" role="group" aria-label="範例">
+          <button data-smv="5" data-acid="1.2">清爽吟釀型</button>
+          <button data-smv="2" data-acid="1.9">生酛純米型</button>
+          <button data-smv="-10" data-acid="1.5">甘口型</button>
+          <button data-smv="-2" data-acid="1.55">不偏不倚</button>
+        </div>
+        <p class="formula mono" aria-label="公式">甘辛度 = 193593 ÷ (1443 + 日本酒度) − 1.16 × 酸度 − 132.57<br>濃淡度 = 94545 ÷ (1443 + 日本酒度) + 1.88 × 酸度 − 68.54</p>
+      </div>
+    </div>
+    <div class="trio trio-2">
+      <div class="trio-c reveal">
+        <p class="voice-tag mono v-re">研究 ── 胺基酸度</p>
+        <p><b lang="ja">アミノ酸度</b>代表鮮味（旨味）的多寡。偏低就清爽、淡麗；偏高就濃郁、有層次，太高則會變成雜味。吟釀酒多半壓得比較低。</p>
+      </div>
+      <blockquote class="voice voice-tradition trio-c reveal">
+        <p class="voice-tag mono">老杜氏的觀點 ── 傳統</p>
+        <p class="voice-ja" lang="ja">今の酒造りは分析重視ですが、数値では測れない領分がまだまだあるように思います。</p>
+        <p class="voice-zh">現在的釀酒很重視分析，但我覺得，數值量不到的地方還多得很。</p>
+        <footer class="voice-src">池田健司｜廣島杜氏</footer>
+      </blockquote>
+    </div>
+  </article>
+
+  <!-- 3-2 精米 -->
+  <article class="block block-polish" id="polish-shape" data-shape>
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">08 — 精米</p>
+      <h3 class="h3">越磨，越好嗎？</h3>
+      <p class="lede">精米步合曾經幾乎等於酒的等級。現在，三方各有說法。</p>
+    </div>
+    <div class="trio">
+      <div class="trio-c reveal">
+        <p class="voice-tag mono v-mk">市場 ── 極限</p>
+        <p class="big-num"><span class="mono">1</span><i>%</i></p>
+        <p>2017 年，山形的楯の川酒造推出精米步合 1% 的「光明」，把米磨到只剩百分之一。高精白一度就等於高級。</p>
+      </div>
+      <blockquote class="voice voice-tradition trio-c reveal">
+        <p class="voice-tag mono">老杜氏的觀點 ── 傳統</p>
+        <p class="voice-ja" lang="ja">35％まで上手に、つまりきれいに搗いたらそれ以上搗く必要はありません。それがわしの結論です。</p>
+        <p class="voice-zh">只要好好地、漂亮地磨到 35%，就不必再磨了。這是我的結論。</p>
+        <footer class="voice-src">池田健司｜廣島杜氏。他也發現精米機的刻度不一定準：設定磨到 40%，他看米覺得實際只有 50% 左右。</footer>
+      </blockquote>
+      <div class="trio-c reveal">
+        <p class="voice-tag mono v-re">研究 ── 形狀</p>
+        <p>問題不只是磨掉多少，還有<strong>怎麼磨</strong>。蛋白質集中在米粒表層，米粒又是扁的，傳統精米卻會把米磨成球形，厚度方向的蛋白質反而留了下來。</p>
+      </div>
+    </div>
+
+    <div class="shape">
+      <div class="shape-main">
+      <div class="shape-ctl" role="radiogroup" aria-label="精米方式">
+        <button role="radio" aria-checked="true" data-shape-mode="0"><b lang="ja">球形精米</b><span>傳統</span></button>
+        <button role="radio" aria-checked="false" data-shape-mode="1"><b lang="ja">扁平精米</b><span>沿著米的形狀磨</span></button>
+      </div>
+      <div class="stage stage-shape stage-m" data-stage data-stage-kind="shape" aria-hidden="true"></div>
+      <div class="shape-viz">
+        <svg viewBox="0 0 320 200" class="shape-svg" role="img" aria-labelledby="shape-t">
+          <title id="shape-t">米粒側面剖面：外圈是原本的米粒，內圈是磨完剩下的部分</title>
+          <defs>
+            <radialGradient id="g-core" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff8ea"/><stop offset="1" stop-color="#fff8ea" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="160" cy="100" rx="130" ry="62" class="sh-outer"/>
+          <ellipse cx="160" cy="100" rx="130" ry="62" class="sh-protein"/>
+          <ellipse cx="160" cy="100" rx="88" ry="54" class="sh-inner"/>
+          <ellipse cx="160" cy="100" rx="46" ry="26" fill="url(#g-core)" class="sh-core"/>
+          <text x="160" y="190" class="sh-cap mono">剖面示意｜外圈：原本的米粒・內圈：留下的部分</text>
+        </svg>
+        <div class="shape-bars">
+          <p class="mono shape-bars-t">要讓蛋白質降到 4%，需要削掉多少？</p>
+          <div class="bar"><span class="bar-l" lang="ja">球形精米</span><span class="bar-track"><i style="--w:50%"></i></span><b class="mono">50%</b></div>
+          <div class="bar bar-flat"><span class="bar-l" lang="ja">扁平精米</span><span class="bar-track"><i style="--w:30%"></i></span><b class="mono">30%</b></div>
+          <p class="note">資料來源：廣島縣立總合技術研究所食品工業技術中心。2018 年起，新型精米機讓扁平精米能在短時間內完成，開始實際用在釀造上。換句話說：<strong>同樣是「精米步合 70%」，兩種米的實際內容可能完全不同。</strong></p>
+        </div>
+      </div>
+      </div>
+      <div class="stage stage-shape stage-d" data-stage data-stage-kind="shape" aria-hidden="true"></div>
+    </div>
+  </article>
+
+  <!-- 3-3 米 -->
+  <article class="block block-rice">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">09 — 風土・米</p>
+      <h3 class="h3">酒米的家譜</h3>
+      <p class="lede">釀酒用的「酒造好適米」顆粒大，中心的心白組織比較疏鬆，麴菌的菌絲容易長進去，吸水也均勻。日本有一百多個酒米品種，以下是四個最常在酒標上看到的。</p>
+    </div>
+    <ul class="rices" role="list">
+      <li class="rice reveal">
+        <p class="rice-pref mono">兵庫</p>
+        <h4 lang="ja">山田錦<small>やまだにしき</small></h4>
+        <p>1923 年由山田穗和短稈渡船交配，1936 年命名，人稱「酒米之王」。全國新酒鑑評會的出品酒多半用它。</p>
+      </li>
+      <li class="rice reveal">
+        <p class="rice-pref mono">岡山</p>
+        <h4 lang="ja">雄町<small>おまち</small></h4>
+        <p>1859 年在岡山雄町發現的在來種，也是山田錦的祖先。稻桿高、容易倒伏、難種，但味道厚實，有一群死忠的「オマチスト」。</p>
+      </li>
+      <li class="rice reveal">
+        <p class="rice-pref mono">新潟・北陸</p>
+        <h4 lang="ja">五百万石<small>ごひゃくまんごく</small></h4>
+        <p>容易做出乾爽的麴，是新潟「淡麗辛口」風格的骨幹。</p>
+      </li>
+      <li class="rice reveal">
+        <p class="rice-pref mono">長野・東北</p>
+        <h4 lang="ja">美山錦<small>みやまにしき</small></h4>
+        <p>耐寒，適合寒冷地區種植，酒質清爽俐落。</p>
+      </li>
+    </ul>
+    <blockquote class="voice voice-tradition voice-inline reveal">
+      <p class="voice-tag mono">老杜氏的觀點 ── 傳統</p>
+      <p class="voice-ja" lang="ja">酒造好適米でのうてもええ酒はできる。</p>
+      <p class="voice-zh">就算不是酒造好適米，也能釀出好酒。</p>
+      <footer class="voice-src">國重弘明｜廣島杜氏，1936 年生。他在香川用便宜的食用米「オオセト」，拿下 20 次全國新酒鑑評會金賞。</footer>
+    </blockquote>
+  </article>
+
+  <!-- 3-4 水 -->
+  <article class="block block-water">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">10 — 風土・水</p>
+      <h3 class="h3">硬水、軟水，<br>還有第三種說法</h3>
+    </div>
+    <div class="waters">
+      <div class="water reveal" data-k="男酒">
+        <h4><span lang="ja">灘・宮水</span><small>硬水</small></h4>
+        <p>天保年間（1837 年，一說 1840 年），櫻正宗的山邑太左衛門發現西宮的井水能釀出好酒，後來稱為「宮水」。礦物質多，發酵旺盛，酒質辛口、骨架結實。</p>
+      </div>
+      <div class="water reveal" data-k="女酒">
+        <h4><span lang="ja">伏見・伏水</span><small>中硬水</small></h4>
+        <p>京都伏見的地下水較柔和，發酵比較慢，酒質圓潤細緻。灘與伏見，是教科書上最經典的一組對照。</p>
+      </div>
+      <div class="water reveal" data-k="軟水">
+        <h4><span lang="ja">広島</span><small>軟水</small></h4>
+        <p>軟水發酵弱，原本被認為不利釀酒。明治時代，三浦仙三郎摸索出適合軟水的釀法，廣島後來成為吟釀酒的重鎮。</p>
+      </div>
+    </div>
+    <blockquote class="voice voice-tradition voice-wide reveal">
+      <p class="voice-tag mono">老杜氏的觀點 ── 傳統</p>
+      <p class="voice-ja" lang="ja">男水・女水というのは、硬水・軟水とはまた違うんです。</p>
+      <p class="voice-zh">男水、女水，跟硬水、軟水又是兩回事。</p>
+      <footer class="voice-src">池田健司｜廣島杜氏。他的分法是：喝起來清爽的水不容易出香氣，但酒會很俐落，這是男水；在口中留有餘韻的水容易釀得大味，但香氣出得來，這是女水。他也說：「好米容易說明，好水是什麼，卻很難說清楚。」</footer>
+    </blockquote>
+  </article>
+
+  <!-- 3-5 溫度 -->
+  <article class="block block-temp" id="temp" data-temp>
+    <div class="block-head">
+      <p class="eyebrow mono">11 — 品飲・燗</p>
+      <h3 class="h3">5℃ 到 55℃，<br>同一瓶酒的十張臉</h3>
+      <p class="lede">日本酒是少數能從冰鎮喝到溫熱的酒。每 5℃ 就有一個名字。拖動溫度看看。</p>
+    </div>
+    <div class="temp-wrap">
+    <div class="stage stage-temp stage-d" data-stage data-stage-kind="temp" aria-hidden="true"></div>
+    <div class="temp">
+      <div class="temp-ctl">
+        <input type="range" id="tempr" class="range range-temp" min="0" max="9" step="1" value="3" aria-label="溫度" aria-valuetext="常溫，約 20℃">
+        <ol class="temp-ticks mono" aria-hidden="true"><li>5</li><li>10</li><li>15</li><li>20</li><li>30</li><li>35</li><li>40</li><li>45</li><li>50</li><li>55</li></ol>
+      </div>
+      <div class="stage stage-temp stage-m" data-stage data-stage-kind="temp" aria-hidden="true"></div>
+      <div class="temp-read" aria-live="polite">
+        <p class="temp-c mono"><span class="temp-deg">20</span><i>℃</i></p>
+        <p class="temp-name" lang="ja"></p>
+        <p class="temp-kana" lang="ja"></p>
+        <p class="temp-desc"></p>
+      </div>
+    </div>
+    </div>
+    <div class="trio trio-2">
+      <aside class="myth reveal">
+        <p class="myth-q"><span class="mono">常見誤解</span>「冷や」就是冰的？</p>
+        <p>不是。<span lang="ja">「冷や」</span>原本指的是不加熱的常溫酒，冰過的叫<span lang="ja">「冷酒」</span>。另外，溫過之後再放涼，叫<span lang="ja">「燗冷まし」</span>，有人特別喜歡它更圓潤的口感。</p>
+      </aside>
+      <div class="vocab reveal">
+        <p class="voice-tag mono v-re">品飲的詞彙</p>
+        <dl>
+          <div><dt lang="ja">上立ち香</dt><dd>入口前，從杯口聞到的香氣。</dd></div>
+          <div><dt lang="ja">含み香</dt><dd>入口後，從口腔經鼻腔回來的香氣。</dd></div>
+          <div><dt lang="ja">カプロン酸エチル</dt><dd>帶蘋果、洋梨般香氣的吟釀香成分。</dd></div>
+          <div><dt lang="ja">酢酸イソアミル</dt><dd>帶香蕉、哈密瓜般香氣的吟釀香成分。</dd></div>
+          <div><dt lang="ja">キレ</dt><dd>嚥下後，味道乾淨俐落地收尾。</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3-6 新知年表 -->
+  <article class="block block-now" id="now" data-p="35">
+    <div class="stage stage-head" data-stage aria-hidden="true"></div>
+    <div class="block-head">
+      <p class="eyebrow mono">12 — 現在進行式</p>
+      <h3 class="h3">日本酒正在改變</h3>
+      <p class="lede">看起來最傳統的酒，這二十年其實變得很快。</p>
+    </div>
+    <ol class="now" role="list">
+      <li class="now-i reveal"><time class="mono">2006</time><div><h4>麴菌成為「國菌」</h4><p>日本釀造學會將麴菌（<i lang="la">Aspergillus oryzae</i>）定為國菌，承認它在日本飲食文化中的地位。</p></div></li>
+      <li class="now-i reveal"><time class="mono">2017</time><div><h4>精米步合 1%</h4><p>楯の川酒造推出「光明」，高精白競爭來到物理上的極限。</p></div></li>
+      <li class="now-i reveal"><time class="mono">2018</time><div><h4>扁平精米走向實用</h4><p>新型精米機讓沿著米粒形狀磨的扁平精米能在短時間內完成。精米步合不再是唯一的指標。</p></div></li>
+      <li class="now-i reveal"><time class="mono">近年</time><div><h4>白麴與高酸</h4><p>把燒酎用的白麴拿來釀日本酒。白麴會產生大量檸檬酸，帶出像白酒一樣酸爽的風格，例如新政的<span lang="ja">「亜麻猫」</span>。</p></div></li>
+      <li class="now-i reveal"><time class="mono">2021</time><div><h4>輸出用清酒製造免許</h4><p>日本國內幾乎不再核發新的清酒製造執照。2021 年起，只要全部外銷，就能申請新執照。</p></div></li>
+      <li class="now-i reveal"><time class="mono">2022</time><div><h4>Craft Sake 運動</h4><p>WAKAZE、haccoba、<span lang="ja">稲とアガベ</span>等 6 家釀造所成立「クラフトサケブリュワリー協會」。它們用日本酒的技法，加入果實、香草等副原料，法規上歸在「其他釀造酒」。</p></div></li>
+      <li class="now-i now-hi reveal"><time class="mono">2024.12</time><div><h4>「伝統的酒造り」登錄 UNESCO</h4><p>以麴菌為核心的日本傳統釀酒技術（包含日本酒、燒酎、泡盛等）登錄為人類非物質文化遺產。</p></div></li>
+    </ol>
+  </article>
+</section>
+
+<!-- ═════════════════════════ CORE ═════════════════════════ -->
+<section class="core" id="core" aria-labelledby="core-title" data-p="35">
+  <div class="core-stage" data-stage data-stage-kind="core" aria-hidden="true"></div>
+  <p class="core-num mono">精米歩合 35% ── 抵達心白</p>
+  <h2 class="core-title" id="core-title">磨到最後，<br>剩下的不是標準答案。</h2>
+  <blockquote class="core-quote">
+    <p class="voice-ja" lang="ja">大事なのは違いを認めるということだと思うのです。</p>
+    <p class="voice-zh">我想，重要的是承認彼此的不同。</p>
+    <footer class="voice-src">中三郎｜能登杜氏，1937 年生。他反對的是把精米步合當成唯一的標準，不是反對香氣或淡麗。</footer>
+  </blockquote>
+  <p class="core-end">找到你自己的那一杯。</p>
+  <a class="core-again mono" href="#top">再潛一次 ↑</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="sf-grid">
+    <div>
+      <p class="sf-h mono">資料來源</p>
+      <ul class="sf-src" role="list">
+        <li>日本國稅廳《清酒の製法品質表示基準》</li>
+        <li>日本の伝統的なこうじ菌を使った酒造り技術の保存会《ベテラン杜氏聞き書き調査》第一彈（令和 5 年度）、第二彈（令和 6 年度），取材・文：鹿熊勤</li>
+        <li>佐藤信 等〈甘辛度・濃淡度〉《日本醸造協会雑誌》69 卷（1974）</li>
+        <li>廣島縣〈扁平・原形精米法について〉</li>
+        <li>日本酒造組合中央會〈伝統的酒造り〉UNESCO 特設網站</li>
+        <li>楯の川酒造、クラフトサケブリュワリー協會公開資料</li>
+      </ul>
+    </div>
+    <div>
+      <p class="sf-h mono">關於杜氏的引文</p>
+      <p class="sf-p">本站引用的杜氏談話，出自 2023–2024 年對昭和世代資深杜氏的口述訪談，代表傳統釀造者的經驗與觀點，不等於現行業界標準。日文為原文，中文為本站翻譯。</p>
+      <p class="sf-h mono">提醒</p>
+      <p class="sf-warn">飲酒過量，有害健康<br>未滿十八歲禁止飲酒・酒後不開車</p>
+    </div>
+  </div>
+  <p class="sf-credit mono"><span>心白 SHINPAKU</span><span>2026 — xkamome</span></p>
+</footer>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/SplitText.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
