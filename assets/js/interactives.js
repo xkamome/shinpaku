@@ -245,20 +245,17 @@ export function initShape() {
   const root = $('[data-shape]');
   if (!root) return;
   const btns = $$('[data-shape-mode]', root);
-  const inner = $('.sh-inner', root), core = $('.sh-core', root);
-  // side view of a grain: length (rx) × thickness (ry). Both keep ~the same area (same polish ratio);
-  // spherical milling trims the long axis harder, flat milling trims the thickness harder.
+  const keep = $$('.sh-keep', root);
+  // Side view of a grain: length (rx) × thickness (ry). Both shapes keep the same area (same polish
+  // ratio). Spherical milling trims the long axis hardest, so protein-rich layers stay at the top and
+  // bottom; flat milling trims the thickness instead.
   const SHAPES = [{ rx: 70, ry: 54 }, { rx: 102, ry: 37 }];
   const set = (mode) => {
     btns.forEach((b) => b.setAttribute('aria-checked', String(+b.dataset.shapeMode === mode)));
     state.flat = mode;
     const s = SHAPES[mode];
-    if (window.gsap) {
-      window.gsap.to(inner, { attr: s, duration: 1.1, ease: 'expo.inOut' });
-      window.gsap.to(core, { attr: { rx: s.rx * 0.5, ry: s.ry * 0.48 }, duration: 1.1, ease: 'expo.inOut' });
-    } else {
-      inner.setAttribute('rx', s.rx); inner.setAttribute('ry', s.ry);
-    }
+    if (window.gsap) window.gsap.to(keep, { attr: s, duration: 1.1, ease: 'expo.inOut', overwrite: true });
+    else keep.forEach((k) => { k.setAttribute('rx', s.rx); k.setAttribute('ry', s.ry); });
   };
   btns.forEach((b) => b.addEventListener('click', () => set(+b.dataset.shapeMode)));
   root.addEventListener('keydown', (e) => {
